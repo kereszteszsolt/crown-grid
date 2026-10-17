@@ -146,9 +146,11 @@ CrownGrid does not include accounts, analytics, cookies, a database, or an appli
 
 > The maintainer's website is available in Hungarian (HU), English (EN), Romanian (RO), and German (DE).
 
-## License
+## License and author
 
-Apache License 2.0. See [`LICENSE`](LICENSE).
+Apache-2.0. Copyright © 2026 **Keresztes Zsolt** — [kereszteszsolt.hu](https://kereszteszsolt.hu).
+
+New hand-written source files use the two-line SPDX header defined in [AGENTS.md](AGENTS.md).
 
 ## ☕ Ways to support
 

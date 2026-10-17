@@ -1,19 +1,13 @@
 ---
 name: vue-feature-delivery
-description: Deliver a bounded CrownGrid Vue feature or fix across screens, components, composables, routes, state contracts, branding, or Vite deployment. Use when user-visible behavior or application lifecycle changes.
+description: Use for CrownGrid Vue 3 screens, reactive composables, typed component events, Vue Router, Vite base paths or frontend build changes.
 ---
 
-# Vue feature delivery
+# Vue / Vite feature delivery
 
-1. Read `AGENTS.md` and the relevant `CG-*` story.
-2. Trace the action through route, screen, component emits, composables, and rendered state.
-3. Keep components declarative and keep puzzle algorithms out of templates.
-4. Use `GameStatus` for lifecycle guards and review timer/control visibility together.
-5. Register pointer, touch, window, and timer resources once and clean up the same resources.
-6. Keep `createWebHistory(import.meta.env.BASE_URL)` aligned with the Vite base.
-7. Preserve fragment-based runtime email construction and avoid publishing an address in Markdown.
-8. Add focused tests or repeatable smoke evidence for changed behavior.
-9. Run `npm run build` and the relevant checks in `docs/testing.md`.
-10. Update story status only when implementation and evidence satisfy every criterion.
-
-Do not add a state library, backend, persistence layer, or broad component extraction without an explicit story.
+1. Read only the active task, the involved component or composable, and tests; load `docs/architecture.md` only if data flow changes.
+2. Keep Vue components focused on rendering and typed events; composables own timers, interaction state and cleanup; solver/generator utilities remain UI-independent.
+3. Keep route history, links and assets compatible with `import.meta.env.BASE_URL` and the configured Vite deployment base.
+4. Register listeners and timers once; dispose exactly those resources; cover loading, aborted, failed and replayed states.
+5. Prefer existing Vue primitives and TypeScript types over a new state library or helper layer.
+6. Run `npm test` for impacted logic and `npm run build` for app changes; add targeted browser checks from `docs/testing.md` when UI behavior changes. Report results and limitations, not assumed passes.

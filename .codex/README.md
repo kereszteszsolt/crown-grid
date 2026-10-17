@@ -1,10 +1,12 @@
-# Codex project setup
+# Codex roles and skills
 
-CrownGrid keeps its AI-assisted workflow intentionally small:
+Use the [root engineering guide](../AGENTS.md) and one active task. **The main session is the default implementer**. These historical roles are optional rather than a mandatory chain:
 
-- `architect` plans cross-cutting state, lifecycle, routing, and deployment changes;
-- `implementation_worker` owns one bounded write task;
-- `algorithm_reviewer` reviews placement, connected regions, counting, optimization, and performance;
-- `reviewer` checks final correctness, accessibility, privacy, documentation, and evidence.
+| Role | Trigger |
+| --- | --- |
+| `implementation_worker` | A single approved, delegated write task; sole writer |
+| `architect` | Read-only assessment of cross-boundary Vue/composable/routing changes |
+| `algorithm_reviewer` | Read-only review of solver/optimizer complexity and correctness |
+| `reviewer` | Read-only independent review of risky code or verification evidence |
 
-Reusable workflows live in `.agents/skills/`. Root `AGENTS.md` is the source of truth for scope, release boundaries, verification, and email-obfuscation requirements.
+Skills in `.agents/skills/` describe **how** to modify Vue/Vite, puzzle utilities, accessibility and evidence; stories define **what** to deliver. Read only the needed skill. The two-thread cap is not a request to use parallel agents; avoid redundant analysis and test runs. Require separate implementation and commit approval.
