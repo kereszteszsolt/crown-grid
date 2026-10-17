@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="docs/releases/release-0.1-crowngrid-foundation/README.md"><img alt="Release 0.1" src="https://img.shields.io/badge/release-0.1-ff7f50"></a>
+  <a href="docs/releases/release-0.2-essential-hardening/README.md"><img alt="Release 0.2" src="https://img.shields.io/badge/release-0.2-ff7f50"></a>
   <img alt="Vue 3.5.26" src="https://img.shields.io/badge/Vue-3.5.26-42b883?logo=vuedotjs&logoColor=white">
   <img alt="TypeScript 5.9.3" src="https://img.shields.io/badge/TypeScript-5.9.3-3178c6?logo=typescript&logoColor=white">
   <img alt="Vite 7.3.1" src="https://img.shields.io/badge/Vite-7.3.1-646cff?logo=vite&logoColor=white">
@@ -19,7 +19,7 @@
 
 **CrownGrid** is a browser-based puzzle generator and game for the color-region Queens ruleset. It creates a square board with connected color regions, searches for a requested maximum number of solutions, and lets the player solve the result without accounts, tracking, or a backend.
 
-[Play CrownGrid](https://kereszteszsolt.github.io/crown-grid/) · [User guide](docs/user-guide.md) · [Architecture](docs/architecture.md) · [Puzzle generation](docs/puzzle-generation.md) · [All documentation](docs/README.md)
+[Play CrownGrid](https://kereszteszsolt.net/crown-grid/) · [User guide](docs/user-guide.md) · [Architecture](docs/architecture.md) · [Puzzle generation](docs/puzzle-generation.md) · [All documentation](docs/README.md)
 
 ## Highlights
 
@@ -28,6 +28,15 @@
 - Mark impossible cells, drag to paint or erase marks, undo moves, reset the board, and shuffle region colors.
 - Run entirely as a static Vue application. The current game state stays in browser memory and is not sent to a server.
 - Inspect generation progress, elapsed time, iteration limits, and the best result returned by the optimizer.
+
+## Tech stack
+
+| Area | Technology / approach |
+| --- | --- |
+| Frontend | Vue 3, TypeScript, Vue Router, Vite |
+| Puzzle engine | Procedural generation, depth-first search / backtracking, solution counting, iterative optimization |
+| Testing | Vitest; GitHub Actions runs tests and production builds |
+| Hosting | Static frontend hosted with GitHub Pages (no backend or database) |
 
 ## Rules and controls
 
