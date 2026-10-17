@@ -1,96 +1,36 @@
-# AGENTS.md
+# CrownGrid Codex engineering guide
 
-## Project
+CrownGrid is a static **Vue 3 / TypeScript / Vite** Queens puzzle application. There is no backend or database. Release 0.1 and narrowly scoped 0.2 hardening have been implemented; do not reopen them without a new request.
 
-**CrownGrid** is the display name for the `crown-grid` repository. It is a static Vue 3 and TypeScript application that generates and plays color-region Queens puzzles entirely in the browser.
+## Read progressively
 
-## Product principles
+1. Read this file and the active `CG-*` story if one exists; otherwise read the requested bug/task.
+2. Inspect the affected Vue feature or pure algorithm utility and its tests. Read `docs/architecture.md`, `docs/puzzle-generation.md`, or `docs/testing.md` only if that topic is affected.
+3. Load only the relevant skill; no automatic agent pipeline or full-repository context preload.
 
-- Keep the core experience browser-only, account-free, and understandable.
-- Preserve the implemented rules: one queen per row, column, and color region; no corner-adjacent queens.
-- Keep puzzle generation deterministic in its contracts even though individual boards are randomized.
-- Prefer small typed utilities and focused composables over a framework or state library added without need.
-- Treat algorithm performance, finite progress values, and input-listener cleanup as correctness concerns.
-- Preserve the runtime fragment-based email construction unless an explicit story replaces it with an equally privacy-conscious approach.
-- Do not publish the full email address in README, the user guide, or other Markdown documentation.
-- Keep display branding (`CrownGrid`) separate from stable story identifiers (`CG-`) and document any repository-base change.
+## Technical boundaries
 
-## Architecture
+- Vue Router owns navigation; `src/features/queens/screens/QueensScreen.vue` coordinates the game UI. Components accept props/emit events, composables own reactive state and timers, and pure TS utilities own generation/solver/optimizer code.
+- Puzzle generation is browser-only; maintain typed-array safety, bounded search and finite progress. The precise puzzle-rule invariants live in `docs/puzzle-generation.md` and the algorithm skill, not copied into every story.
+- Keep pointer/touch/keyboard listeners owned and disposed once; protect timer, replay and generation-error state transitions.
+- Keep routing consistent with the Vite/GitHub Pages base; no backend, persistence system or state management package without a separately approved scope.
+- Preserve the privacy-conscious fragmented contact-email assembly and do not expose the full address in public Markdown. See `docs/privacy-and-contact.md`.
 
-```mermaid
-flowchart LR
-    ROUTER[Vue Router] --> CORE[Core screens and navigation]
-    ROUTER --> QUEENS[Queens feature]
-    QUEENS --> COMPONENTS[Board, cells, controls and modals]
-    QUEENS --> COMPOSABLES[State, input, timer, conflicts and win]
-    QUEENS --> UTILS[Placement, regions, solver and optimizer]
-    COMPOSABLES --> MEMORY[(Browser memory)]
-    UTILS --> MEMORY
-```
+## On-demand skills and roles
 
-See `docs/architecture.md` and `docs/puzzle-generation.md`.
+| Skill | Use for |
+| --- | --- |
+| `vue-feature-delivery` | Vue screens, composables, typed interactions, routing, Vite |
+| `queens-puzzle-algorithms` | Pure puzzle generation, backtracking, bounded optimizer, performance |
+| `accessibility-responsive-ui` | Focus, keyboard/touch/pointer, responsive layout and ARIA |
+| `release-evidence` | Story evidence, verification, repo/README links and release claims |
 
-## Boundaries
+**Default:** the main Codex session handles one approved change without delegation. The existing `architect` and `algorithm_reviewer` are optional read-only specialists for truly cross-boundary/algorithm-risk changes; `reviewer` optionally checks a risky diff; `implementation_worker` is the **only writer** if work is delegated. Do not spawn all roles or duplicate reviews. At most two active threads, only one writer.
 
-- `src/core` owns navigation and informational screens.
-- `src/features/queens/screens/QueensScreen.vue` orchestrates the game lifecycle.
-- Feature components render props and emit user actions; they should not own puzzle algorithms.
-- Composables own reactive state and interaction behavior.
-- Utilities own typed-array puzzle generation, validation, counting, and optimization.
-- No source module should call a backend because CrownGrid has no backend.
-- Branding-only changes must not silently alter puzzle rules, generation limits, or history behavior.
+## Delivery and verification
 
-## Current release scope
+- State one task/story, affected paths, possible risks and focused checks; request implementation approval.
+- Keep the change small; run `npm test` for algorithms and `npm run build` for app changes. Follow `docs/testing.md` for manual UI/browser verification; there is currently no broad automated E2E suite.
+- Report exact commands and observations; keep planned work distinct from implemented release evidence. Propose the diff/commit separately; no unapproved commit, push or next story.
 
-Release 0.1 covers identity, README, favicon, documentation, release evidence, and focused AI-assisted engineering files. It does not authorize a puzzle-engine rewrite.
-
-Release 0.2 contains one implemented hardening story, `CG-005`, limited to:
-
-- consistent `CellState` initialization;
-- finite optimizer best/progress values;
-- one bounded touch/pointer listener path;
-- timer, replay, and generation-error recovery correctness;
-- correctly targeted contact-card email assembly while preserving obfuscation.
-
-A Web Worker migration, broad `QueensScreen` controller extraction, UI redesign, persistence, authentication, backend services, and dependency modernization remain out of scope unless a later story introduces them.
-
-## Codex workflow
-
-Use only the smallest relevant role:
-
-- `architect` for cross-cutting state, lifecycle, routing, or deployment changes;
-- `implementation_worker` for one bounded story or defect;
-- `algorithm_reviewer` for generator, solver, optimizer, typed-array, and complexity review;
-- `reviewer` for final behavior, accessibility, privacy, documentation, and evidence review.
-
-Repository skills:
-
-- `vue-feature-delivery` — Vue components, composables, routes, state, and build changes;
-- `queens-puzzle-algorithms` — placement, connected regions, solution counting, and optimization;
-- `accessibility-responsive-ui` — keyboard, pointer/touch, semantics, responsive layout, and status feedback;
-- `release-evidence` — story status, verification, documentation, and release boundaries.
-
-Do not invoke every role for a small edit. Prefer one write-owning agent at a time.
-
-## License headers
-
-The repository uses Apache-2.0. New hand-authored, project-specific source files use:
-
-```text
-SPDX-FileCopyrightText: 2026 Keresztes Zsolt <https://kereszteszsolt.hu>
-SPDX-License-Identifier: Apache-2.0
-```
-
-Do not add `Present`. Do not add the header to Markdown, JSON, TOML, YAML, generated lock files, standard configuration files, or binary assets.
-
-## Verification
-
-Before claiming a code story is implemented, run the relevant checks:
-
-```bash
-npm ci
-npm test
-npm run build
-```
-
-Then complete the manual smoke path in `docs/testing.md`. The focused Vitest suite covers empty state initialization and optimizer finite-result behavior; the repository still has no lint script or broad automated browser suite, so do not claim coverage that does not exist.
+New handwritten source files use the existing two-line Apache-2.0 SPDX notice (`2026 Keresztes Zsolt <https://kereszteszsolt.hu>`). Do not add headers to Markdown, JSON, YAML, TOML, lock files or generated assets.

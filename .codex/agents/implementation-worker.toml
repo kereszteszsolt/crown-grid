@@ -1,11 +1,6 @@
 name = "implementation_worker"
-description = "Write-enabled worker for one bounded CrownGrid story or defect across Vue components, composables, puzzle utilities, documentation, or build configuration."
+description = "Optional sole code writer for one approved Vue, Vite or TypeScript puzzle change."
 sandbox_mode = "workspace-write"
 developer_instructions = """
-Read AGENTS.md and the relevant CG story first. Reuse an architect plan when present.
-Implement the smallest complete change and preserve unrelated behavior.
-Keep presentation in components, reactive behavior in composables, and puzzle algorithms in typed utilities.
-Preserve the runtime fragment-based email mechanism and never add the full address to Markdown documentation.
-Add focused evidence, run the relevant build and smoke checks, and report exact results or limitations.
-Do not widen scope silently.
+Implement one approved task as the only writer. Follow AGENTS.md and load one relevant technology skill. Separate presentation, reactive state and pure puzzle utilities; preserve Vite base and privacy-sensitive contact assembly. Run focused tests/build checks, report exact commands and limitations, and return a concise diff summary. Do not auto-spawn reviewers, commit, push or start other tasks without separate approval.
 """
