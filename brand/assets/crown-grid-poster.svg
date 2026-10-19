@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 480" role="img" aria-labelledby="title desc">
+  <title id="title">CrownGrid project poster</title>
+  <desc id="desc">CrownGrid above a colorful Queens puzzle, with connected pink, yellow, blue, green and teal regions and three crown-shaped queen markers.</desc>
+  <rect width="780" height="480" rx="24" fill="#fff8eb"/>
+  <g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+    <text x="390" y="88" fill="#263c39" font-size="62" font-weight="800" letter-spacing="-2">CrownGrid</text>
+    <text x="390" y="132" fill="#735443" font-size="28" font-weight="500">Color regions. One queen each.</text>
+  </g>
+  <defs><clipPath id="board"><rect x="255" y="169" width="270" height="270" rx="12"/></clipPath></defs>
+  <rect x="263" y="177" width="270" height="270" rx="12" fill="#d7cbb5"/>
+  <g clip-path="url(#board)">
+    <rect x="255" y="169" width="54" height="54" fill="#ffd54f" stroke="#173438" stroke-opacity="0.16" stroke-width="2"/>
+    <rect x="309" y="169" width="54" height="54" fill="#ffd54f" stroke="#173438" stroke-opacity="0.16" stroke-width="2"/>
+    <rect x="363" y="169" width="54" height="54" fill="#64b5f6" stroke="#173438" stroke-opacity="0.16" stroke-width="2"/>
+    <rect x="417" y="169" width="54" height="54" fill="#64b5f6" stroke="#173438" stroke-opacity="0.16" stroke-width="2"/>
+    <rect x="471" y="169" width="54" height="54" fill="#64b5f6" stroke="#173438" stroke-opacity="0.16" stroke-width="2"/>
+    <rect x="255" y="223" width="54" height="54" fill="#f48fb1" stroke="#173438" stroke-opacity="0.16" stroke-width="2"/>
+    <rect x="309" y="223" width="54" height="54" fill="#ffd54f" stroke="#173438" stroke-opacity="0.16" stroke-width="2"/>
+    <rect x="363" y="223" width="54" height="54" fill="#64b5f6" stroke="#173438" stroke-opacity="0.16" stroke-width="2"/>
+    <rect x="417" y="223" width="54" height="54" fill="#64b5f6" stroke="#173438" stroke-opacity="0.16" stroke-width="2"/>
+    <rect x="471" y="223" width="54" height="54" fill="#64b5f6" stroke="#173438" stroke-opacity="0.16" stroke-width="2"/>
+    <rect x="255" y="277" width="54" height="54" fill="#f48fb1" stroke="#173438" stroke-opacity="0.16" stroke-width="2"/>
+    <rect x="309" y="277" width="54" height="54" fill="#ffd54f" stroke="#173438" stroke-opacity="0.16" stroke-width="2"/>
+    <rect x="363" y="277" width="54" height="54" fill="#81c784" stroke="#173438" stroke-opacity="0.16" stroke-width="2"/>
+    <rect x="417" y="277" width="54" height="54" fill="#81c784" stroke="#173438" stroke-opacity="0.16" stroke-width="2"/>
+    <rect x="471" y="277" width="54" height="54" fill="#64b5f6" stroke="#173438" stroke-opacity="0.16" stroke-width="2"/>
+    <rect x="255" y="331" width="54" height="54" fill="#f48fb1" stroke="#173438" stroke-opacity="0.16" stroke-width="2"/>
+    <rect x="309" y="331" width="54" height="54" fill="#4db6ac" stroke="#173438" stroke-opacity="0.16" stroke-width="2"/>
+    <rect x="363" y="331" width="54" height="54" fill="#4db6ac" stroke="#173438" stroke-opacity="0.16" stroke-width="2"/>
+    <rect x="417" y="331" width="54" height="54" fill="#81c784" stroke="#173438" stroke-opacity="0.16" stroke-width="2"/>
+    <rect x="471" y="331" width="54" height="54" fill="#81c784" stroke="#173438" stroke-opacity="0.16" stroke-width="2"/>
+    <rect x="255" y="385" width="54" height="54" fill="#f48fb1" stroke="#173438" stroke-opacity="0.16" stroke-width="2"/>
+    <rect x="309" y="385" width="54" height="54" fill="#4db6ac" stroke="#173438" stroke-opacity="0.16" stroke-width="2"/>
+    <rect x="363" y="385" width="54" height="54" fill="#4db6ac" stroke="#173438" stroke-opacity="0.16" stroke-width="2"/>
+    <rect x="417" y="385" width="54" height="54" fill="#4db6ac" stroke="#173438" stroke-opacity="0.16" stroke-width="2"/>
+    <rect x="471" y="385" width="54" height="54" fill="#81c784" stroke="#173438" stroke-opacity="0.16" stroke-width="2"/>
+    <path d="M255 223h54" stroke="#173438" stroke-width="5"/>
+    <path d="M363 169v54" stroke="#173438" stroke-width="5"/>
+    <path d="M309 223v54" stroke="#173438" stroke-width="5"/>
+    <path d="M363 223v54" stroke="#173438" stroke-width="5"/>
+    <path d="M363 277h54" stroke="#173438" stroke-width="5"/>
+    <path d="M417 277h54" stroke="#173438" stroke-width="5"/>
+    <path d="M309 277v54" stroke="#173438" stroke-width="5"/>
+    <path d="M363 277v54" stroke="#173438" stroke-width="5"/>
+    <path d="M309 331h54" stroke="#173438" stroke-width="5"/>
+    <path d="M363 331h54" stroke="#173438" stroke-width="5"/>
+    <path d="M471 277v54" stroke="#173438" stroke-width="5"/>
+    <path d="M471 331h54" stroke="#173438" stroke-width="5"/>
+    <path d="M309 331v54" stroke="#173438" stroke-width="5"/>
+    <path d="M417 331v54" stroke="#173438" stroke-width="5"/>
+    <path d="M417 385h54" stroke="#173438" stroke-width="5"/>
+    <path d="M309 385v54" stroke="#173438" stroke-width="5"/>
+    <path d="M471 385v54" stroke="#173438" stroke-width="5"/>
+  </g>
+  <rect x="255" y="169" width="270" height="270" rx="12" fill="none" stroke="#173438" stroke-width="5"/>
+  <g transform="translate(336 197)" fill="#173438">
+    <path d="m-17 10-5-22 13 6L0-20l9 14 13-6-5 22Z"/>
+    <circle cx="-22" cy="-13" r="3"/><circle cy="-21" r="3"/><circle cx="22" cy="-13" r="3"/>
+    <rect x="-18" y="14" width="36" height="6" rx="2"/>
+  </g>
+  <g transform="translate(282 305)" fill="#173438">
+    <path d="m-17 10-5-22 13 6L0-20l9 14 13-6-5 22Z"/>
+    <circle cx="-22" cy="-13" r="3"/><circle cy="-21" r="3"/><circle cx="22" cy="-13" r="3"/>
+    <rect x="-18" y="14" width="36" height="6" rx="2"/>
+  </g>
+  <g transform="translate(498 413)" fill="#173438">
+    <path d="m-17 10-5-22 13 6L0-20l9 14 13-6-5 22Z"/>
+    <circle cx="-22" cy="-13" r="3"/><circle cy="-21" r="3"/><circle cx="22" cy="-13" r="3"/>
+    <rect x="-18" y="14" width="36" height="6" rx="2"/>
+  </g>
+  <path d="m438 190 12 12m0-12-12 12" stroke="#173438" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+  <path d="m330 244 12 12m0-12-12 12" stroke="#173438" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+  <path d="m384 298 12 12m0-12-12 12" stroke="#173438" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+  <path d="m276 352 12 12m0-12-12 12" stroke="#173438" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+  <path d="m384 406 12 12m0-12-12 12" stroke="#173438" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+</svg>

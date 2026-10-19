@@ -105,7 +105,7 @@ The Vite base path is `/crown-grid/`. Update [`vite.config.ts`](vite.config.ts),
 - [Puzzle-generation and solver contract](docs/puzzle-generation.md)
 - [Development guide](docs/development.md)
 - [Testing and verification](docs/testing.md)
-- [Brand configuration](docs/brand-configuration.md)
+- [App configuration](docs/app-configuration.md)
 - [Privacy and contact boundaries](docs/privacy-and-contact.md)
 - [Release index](docs/releases/README.md)
 - [Release 0.1: CrownGrid foundation](docs/releases/release-0.1-crowngrid-foundation/README.md)

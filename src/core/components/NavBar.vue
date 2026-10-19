@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
+import { appInfo } from '../app-info';
+import AboutDialog from './AboutDialog.vue';
+const aboutDialog = ref<InstanceType<typeof AboutDialog>>();
 
 interface SectionNav {
   id: 'home' | 'queens' | 'about';
@@ -42,9 +45,9 @@ watch(
 <template>
   <header class="navbar-header">
     <div class="navbar-container">
-      <RouterLink class="navbar-brand" to="/" aria-label="Go to home">
-        <div class="navbar-logo" aria-hidden="true">♛</div>
-        <div class="navbar-title">CrownGrid</div>
+      <RouterLink class="navbar-identity" to="/" aria-label="Go to home">
+        <img v-if="appInfo.icon" class="navbar-logo" :src="appInfo.icon" alt="" width="44" height="44" />
+        <div class="navbar-title">{{ appInfo.appName }}</div>
       </RouterLink>
 
       <!-- Mobile only: show active section label centered -->
@@ -54,15 +57,16 @@ watch(
 
       <!-- Desktop navigation -->
       <nav class="navbar-desktop-nav" aria-label="Primary navigation">
-        <RouterLink
-            v-for="section in sections"
-            :key="section.id"
+        <template v-for="section in sections" :key="section.id">
+          <button v-if="section.id === 'about'" type="button" class="navbar-nav-link" aria-haspopup="dialog" @click="aboutDialog?.open()">About</button>
+          <RouterLink v-else
             :to="section.path"
             class="navbar-nav-link"
             :class="activeSection === section.id ? 'navbar-nav-link-active' : 'navbar-nav-link-inactive'"
         >
           <span class="navbar-nav-link-text">{{ section.label }}</span>
         </RouterLink>
+        </template>
       </nav>
 
       <!-- Mobile burger -->
@@ -87,16 +91,18 @@ watch(
         class="navbar-mobile-nav"
         aria-label="Mobile primary navigation"
     >
-      <RouterLink
-          v-for="section in sections"
-          :key="section.id"
+      <template v-for="section in sections" :key="section.id">
+      <button v-if="section.id === 'about'" type="button" class="navbar-mobile-nav-link" aria-haspopup="dialog" @click="aboutDialog?.open()">About</button>
+        <RouterLink v-else
           :to="section.path"
           class="navbar-mobile-nav-link"
           :class="activeSection === section.id ? 'navbar-mobile-nav-link-active' : 'navbar-mobile-nav-link-inactive'"
       >
         {{ section.label }}
       </RouterLink>
+      </template>
     </nav>
+    <AboutDialog ref="aboutDialog" />
   </header>
 </template>
 
@@ -121,7 +127,7 @@ watch(
   width: 100%;
 }
 
-.navbar-brand {
+.navbar-identity {
   display: flex;
   align-items: center;
   margin-left: 0.75rem;
@@ -154,7 +160,7 @@ watch(
   text-shadow: 0 1px 2px rgb(0 0 0 / 0.2);
 }
 
-.navbar-brand:hover .navbar-logo {
+.navbar-identity:hover .navbar-logo {
   border-color: var(--color-tertiary);
   transform: scale(1.08) rotate(-8deg);
   box-shadow:
@@ -330,7 +336,7 @@ watch(
     font-size: 1.25rem;
   }
 
-  .navbar-brand {
+  .navbar-identity {
     margin-left: 1rem;
   }
 
@@ -345,4 +351,8 @@ watch(
     font-size: 1.05rem;
   }
 }
+
+button.navbar-nav-link, button.navbar-mobile-nav-link { font-family: inherit; background: transparent; cursor: pointer; color: inherit; }
+.navbar-logo { object-fit: contain; }
+button.navbar-mobile-nav-link { text-align: left; }
 </style>

@@ -46,7 +46,7 @@ npm run preview
 
 ## Branding and deployment
 
-The display product is `CrownGrid`; the repository, package, and GitHub Pages base are `crown-grid` and `/crown-grid/`. See [brand configuration](brand-configuration.md).
+The display product is `CrownGrid`; the repository, package, and GitHub Pages base are `crown-grid` and `/crown-grid/`. See [brand configuration](app-configuration.md).
 
 A repository rename requires coordinated updates to:
 

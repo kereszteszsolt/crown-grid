@@ -1,4 +1,6 @@
-# CrownGrid brand configuration
+# CrownGrid app configuration
+
+The canonical metadata and artwork catalog is [`brand/branding.json`](../brand/branding.json); see the [shared contract](../brand/README.md). Application styles remain in the existing design tokens. The UI imports the JSON at build time through its `app-info.ts` adapter; local artwork is bundled by Vite.
 
 ## Canonical identity
 
@@ -18,7 +20,7 @@ Use `CrownGrid` as one word in display copy. Use `crown-grid` for repository, pa
 
 ## Product mark
 
-`public/favicon.svg` is the canonical compact mark: a light crown over a subtle grid on the existing coral accent. It is designed to remain recognizable at small browser-tab sizes without depending on an external font.
+`brand/assets/favicon.svg` holds the shared compact mark, copied from the served `public/favicon.svg`: a light crown over a subtle grid on the existing coral accent. It is designed to remain recognizable at small browser-tab sizes without depending on an external font.
 
 ```mermaid
 flowchart LR
@@ -64,3 +66,8 @@ If the repository name changes:
 4. preserve `CG-` story history unless a deliberate migration is documented;
 5. preserve puzzle behavior and runtime contact privacy independently from display branding;
 6. verify navigation and deep links from the production build.
+
+
+## About and attribution
+
+The navbar opens a native modal dialog without navigating away from the current game or room. The existing `/about` details route remains available. About uses the configured poster, description, author/project destinations, two support actions and voluntary-support notice. Links show descriptions and full destinations on focus/hover, with natural wrapping at narrow widths. Footer attribution shows the current year, author, Apache-2.0 license and author website. Metadata and artwork remain in the repository-root catalog; consumers use functional filenames.

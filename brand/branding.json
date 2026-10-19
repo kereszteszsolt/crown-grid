@@ -1,0 +1,17 @@
+{
+  "appName": "CrownGrid",
+  "appTagline": "Generate. Place. Solve.",
+  "appDescription": "CrownGrid is a browser-based Queens puzzle generator and game.",
+  "appWebsite": "https://kereszteszsolt.net/crown-grid/",
+  "appGithubUrl": "https://github.com/kereszteszsolt/crown-grid",
+  "appFavicon": "assets/favicon.svg",
+  "appIcon": "assets/favicon.svg",
+  "appPoster": "assets/crown-grid-poster.svg",
+  "authorName": "Keresztes Zsolt",
+  "authorWebsite": "https://kereszteszsolt.hu",
+  "authorWebsiteLanguages": ["hu", "en", "ro", "de"],
+  "authorGithub": "https://github.com/kereszteszsolt",
+  "authorWaysToSupportUrl": "https://kereszteszsolt.hu/ways-to-support",
+  "authorBuyMeACoffeeUrl": "https://buymeacoffee.com/kereszteszsolt",
+  "supportRemarkText": "Support is voluntary and does not create any obligation, priority service, special access or other consideration. Thank you for your attention, and also if you support my work in any way!"
+}
